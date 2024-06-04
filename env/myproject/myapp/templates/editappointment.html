@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+	<style>
+		body {
+    text-align: center;
+    }
+form {
+    display: inline-block;
+}
+</style>
+    <title>Appointment Form</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<!-- width: 500px;height: 500px gives you the size of the form -->
+<!-- style="border: solid;" gives you a nice border in the form -->
+	<form  method="POST" action="/updateappointment/{{result.id}}" style="background-color: #2F4F4F;width: 500px;height: 650px;border:solid;">
+{% csrf_token %}
+
+		<h1 align="center" style="color: #FFFFF0">Appointment Form</h1>
+
+
+		<br>
+		<label for="patientname" style="margin-left: 10px; color: #FFFFF0" >patient name: <span style="color: #FF6347">*</span></label><br>
+		<input type="text" id="patientname" name="patientname" value="{{result.patientname}}" required style="border: solid 1px;margin-left:10px;width: 400px">
+		<br>
+		<br>
+
+
+
+<!-- <br> line break in text -->
+		<br>
+		<label for="appointmentdate" style="margin-left: 10px;color: #FFFFF0">appointment: <span style="color: #FF6347">*</span></label>
+		<input type="date" id="appointmentdate" name="appointmentdate" value="{{result.appointmentdate}}"   style="border: solid 1px;margin-left:10px;width: 400px">
+		<br>
+		<br>
+
+
+       <label for="symptoms" style="margin-left: 10px;;color: #FFFFF0">symptoms: <span style="color: #FF6347">*</span></label><br>
+		<input type="text" id="symptoms" name="symptoms" value="{{result.symtoms}}" required style="border: solid 1px;margin-left:10px;width: 400px">
+		<br>
+<br>
+        <br>
+
+
+<!-- USERNAME INFO -->
+		<label for="doctorname" style="margin-left: 10px;;color: #FFFFF0">doctor name: <span style="color: #FF6347">*</span></label><br>
+		<input type="text"  id="doctorname" name="doctorname" value="{{result.doctorname}}" required style="border: solid 1px;margin-left:10px;width: 400px">
+		<br>
+		<br>
+
+
+
+<label for="department" style="margin-left: 10px;;color: #FFFFF0">Department name: <span style="color: #FF6347">*</span></label><br>
+		<input id="department" type="text" name="department" value="{{result.department}}" required style="border: solid 1px;margin-left:10px;width: 400px">
+		<br>
+		<br>
+<input type="submit" value="SAVE">
+	</form>
+
+</body>
+</html>

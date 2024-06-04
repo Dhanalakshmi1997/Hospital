@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<style>
+		body {
+    text-align: center;
+    }
+form {
+    display: inline-block;
+}
+    <title>Registration Form</title>
+<!-- charset="utf-8" to display correctly special characters -->
+	<meta charset="utf-8">
+	</style>
+</head>
+<body>
+	<form  method="POST" style="background-color: #2F4F4F;width: 500px;height: 650px;border:solid;">
+{% csrf_token %}
+
+		<h1 align="center" style="color: #FFFFF0">Appointment Form</h1>
+<!-- <br> line break in text -->
+		<br>
+<!-- NAME INFO -->
+		<label for="patientname" style="margin-left: 10px; color: #FFFFF0" >patient name: <span style="color: #FF6347">*</span></label><br>
+		<input type="text" id="patientname" name="patientname" placeholder="yourName" required style="border: solid 1px;margin-left:10px;width: 400px">
+		<br>
+		<br>
+
+
+
+<!-- <br> line break in text -->
+<!-- style="margin-left: 10px" gives margin in the form of 10px -->
+		<br>
+		<label for="appointmentdate" style="margin-left: 10px;color: #FFFFF0">appointment: <span style="color: #FF6347">*</span></label>
+		<input type="date" id="appointmentdate" name="appointmentdate" placeholder= "" style="border: solid 1px;margin-left:10px;width: 400px">
+		<br>
+		<br>
+
+
+
+
+
+       <label for="symptom" style="margin-left: 10px;;color: #FFFFF0">symptoms: <span style="color: #FF6347">*</span></label><br>
+		<input type="text" id="symptom" name="symptom" placeholder="symptom" required style="border: solid 1px;margin-left:10px;width: 400px">
+		<br>
+<br>
+        <br>
+
+
+<!-- USERNAME INFO -->
+		<label for="doctorname" style="margin-left: 10px;;color: #FFFFF0">Doctor name: <span style="color: #FF6347">*</span></label><br>
+		<input type="text"  id="doctorname" name="doctorname" placeholder="" required style="border: solid 1px;margin-left:10px;width: 400px">
+		<br>
+		<br>
+
+
+
+<label for="department" style="margin-left: 10px;;color: #FFFFF0">Department name: <span style="color: #FF6347">*</span></label><br>
+		<input id="department" type="text" name="department" placeholder="" required style="border: solid 1px;margin-left:10px;width: 400px">
+		<br>
+		<br>
+<input type="submit" value="book appointment">
+	</form>
+</body>
+</html>

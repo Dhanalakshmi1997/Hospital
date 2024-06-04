@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration Form</title>
+	<style>
+body {
+    text-align: center;
+    }
+form {
+    display: inline-block;
+}
+
+
+
+	</style>
+</head>
+<body>
+	<form method="POST" action="/updatedepartment/{{result.id}}" style="background-color: #2F4F4F;width: 500px;height: 650px;border:solid;">
+		{% csrf_token %}
+
+		<h1 align="center" style="color: #FFFFF0">Department Form</h1>
+		<br>
+
+
+		<!------patientname------------->
+		<label for="departmentnumber" style="margin-left: 10px; color: #FFFFF0" >Department Number: <span style="color: #FF6347">*</span></label><br>
+		<input  type="text" id="departmentnumber"  name="departmentnumber" value="{{result.departmentnumber}}" required style="border: solid 1px;margin-left:10px;width: 400px">
+		<br>
+		<br>
+
+<label for="departmentname" style="margin-left: 10px; color: #FFFFF0" >Department Name: <span style="color: #FF6347">*</span></label><br>
+		<input  type="text" id="departmentname"  name="departmentname" value="{{result.departmentname}}" required style="border: solid 1px;margin-left:10px;width: 400px">
+		<br>
+		<br>
+
+<label for="doctorname" style="margin-left: 10px; color: #FFFFF0" >Doctor Name: <span style="color: #FF6347">*</span></label><br>
+		<input  type="text" id="doctorname"  name="doctorname" value="{{result.doctorname}}" required style="border: solid 1px;margin-left:10px;width: 400px">
+		<br>
+		<br>
+
+
+		<input  style="margin-left: 10px" type="submit" value="SAVE">
+<br>
+        <br>
+
+
+</form>
+
+</body>
+</html>

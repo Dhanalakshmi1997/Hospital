@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>registration form</title>
+    <meta charset="utf-8">
+		<style>
+		body {
+    text-align: center;
+    }
+form {
+    display: inline-block;
+}
+
+
+	</style>
+</head>
+<body>
+<form method="POST" action="/updatedoctor/{{result.id}}" style="background-color: #2F4F4F;width: 500px;height: 650px;border:solid;">
+		{% csrf_token %}
+
+
+		<h1 align="center" style="color: #FFFFF0">Registration Form</h1>
+<!-- <br> line break in text -->
+		<br>
+
+
+		<!------patientname------------->
+		<label for="patientname" style="margin-left: 10px; color: #FFFFF0" >Patient Name: <span style="color: #FF6347">*</span></label><br>
+		<input  type="text" id="patientname"  name="patientname" value="{{result.patientname}}" required style="border: solid 1px;margin-left:10px;width: 400px">
+		<br>
+		<br>
+
+<!-- GENDER INFO -->
+		<label for="male" style="margin-left: 10px;color: #FFFFF0">Male:</label>
+		<input id="male" type="radio" name="gender-choice" value="male" >
+		<label for="female" style="margin-left: 10px;color: #FFFFF0">Female:</label>
+		<input id="female" type="radio" name="gender-choice" value="female">
+		<label for="other" style="margin-left: 10px;color: #FFFFF0">Other:</label>
+		<input id="other" type="radio" name="gender-choice" value="{{result.gender}}">
+		<br>
+		<br>
+
+
+		<!------address----->
+		<label for="address" style="margin-left: 10px;;color: #FFFFF0">Address <span style="color: #FF6347">*</span></label><br>
+		<textarea id="address" type="text" name="address" value="{{result.address}}"  required style="..."></textarea>
+		<br>
+		<br>
+
+		<label for="contactno" style="margin-left: 10px;;color: #FFFFF0">contactno <span style="color: #FF6347">*</span></label><br>
+		<input id="contactno" type="text" name="contactno" value="{{contactno}}"  style="..."></input>
+		<br>
+		<br>
+
+<!-- USERNAME INFO -->
+		<label for="username" style="margin-left: 10px;;color: #FFFFF0">User Name: <span style="color: #FF6347">*</span></label><br>
+		<input id="username" type="text" name="username" value="{{result.username}}" required style="border: solid 1px;margin-left:10px;width: 400px">
+		<br>
+		<br>
+<!-- required title="5 to 10 characters" pattern=".{5,10}" to set the lenght of the input password box min 5 chars, max 10 chars and display the message you want "5 to 10 characters" -->
+<!-- PASSWORD INFO -->
+		<label for="password" style="margin-left: 10px;color: #FFFFF0">Password: <span style="color: #FF6347">*</span></label><br>
+		<input id="password" type="password" name="password" style="border: solid 1px;margin-left: 10px;width: 200px;" value="{{result.password}}" required title="5 to 10 characters" pattern=".{5,10}">
+		<br>
+		<br>
+<!-- PASSWORD CONFIRMATION INFO -->
+		<label for="password1" style="margin-left: 10px;color: #FFFFF0">Confirm your Password: <span style="color: #FF6347">*</span></label><br>
+		<input id="password1" type="password" name="password1" style="border: solid 1px;margin-left: 10px;width: 200px;" value="{{result.password1}}" required title="5 to 10 characters" pattern=".{5,10}">
+		<br>
+		<br>
+
+<!-- SUBMIT AND RESET INFO -->
+		<input  style="margin-left: 10px" type="submit" value="SAVE">
+
+	</form>
+</body>
+</html>
